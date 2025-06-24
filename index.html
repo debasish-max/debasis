@@ -57,7 +57,7 @@
         100% { transform: translateY(-120vh) translateX(50px); opacity: 0; }
     }
 
-    /* CSS Cake with Proper Candles */
+    /* CSS Cake with Candles */
     .cake {
         position: relative;
         width: 200px;
@@ -151,27 +151,13 @@
         from { transform: scale(0); opacity: 0; }
         to { transform: scale(1); opacity: 1; }
     }
-
-    /* Flowers Dropping */
-    .flower {
-        position: absolute;
-        width: 30px;
-        height: 30px;
-        background: url('https://i.imgur.com/NtFQ1Gg.png') no-repeat center center/contain;
-        animation: dropFlower 8s linear infinite;
-    }
-
-    @keyframes dropFlower {
-        0% { transform: translateY(-50px); opacity: 1; }
-        100% { transform: translateY(110vh); opacity: 0; }
-    }
 </style>
 </head>
 <body>
 
 <!-- First Page -->
 <div class="page active" id="page1">
-    <h1>🎉 Happy Birthday Sampriti ! 🎂</h1>
+    <h1>🎉 Happy Birthday My Sampriti 🎂</h1>
     <p>You are the most special part of my life. Wishing you a day full of love, laughter, and unforgettable moments.</p>
     
     <div class="cake">
@@ -184,7 +170,7 @@
         </div>
     </div>
 
-    <button onclick="nextPage()">Click here ❤️</button>
+    <button onclick="nextPage()">Thank You ❤️</button>
 
     <!-- Balloons -->
     <div class="balloon" style="left: 15%; animation-delay: 0s;"></div>
@@ -200,8 +186,8 @@
 
 <!-- Third Page -->
 <div class="page" id="page3">
-    <h2>🎶 A song dedicated to you ❤️</h2>
-    <p>Click below to enjoy your special song.</p>
+    <h2>🎶 A song dedicated for you by me 🎶</h2>
+    <p>Click below to enjoy the song.</p>
     <audio controls>
         <source src="song.mp3" type="audio/mp3">
         Your browser does not support audio.
@@ -220,7 +206,6 @@
             showPhotos();
         } else if (currentPage === 3) {
             document.getElementById('page3').classList.add('active');
-            dropFlowers();
         }
     }
 
@@ -270,19 +255,9 @@
         });
 
         const btn = document.createElement('button');
-        btn.innerText = "More for You 🎵";
+        btn.innerText = "More for You ❤️";
         btn.onclick = nextPage;
         container.appendChild(btn);
-    }
-
-    function dropFlowers() {
-        for (let i = 0; i < 15; i++) {
-            const flower = document.createElement('div');
-            flower.className = 'flower';
-            flower.style.left = `${Math.random() * 100}%`;
-            flower.style.animationDelay = `${Math.random() * 5}s`;
-            document.getElementById('page3').appendChild(flower);
-        }
     }
 </script>
 
